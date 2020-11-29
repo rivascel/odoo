@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record id="model_acces_califica" model="ir.model.access">
+            <field name="name">model.access.califica</field>
+            <field name="model_id" ref="ideas_app.model_califica_ideas"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlike" eval="1"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="califica_tree" model="ir.ui.view">
+		<field name="name">view.tree.califica</field>
+		<field name="model">califica.ideas</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="idea_id" />
+				<field name="calificacion_id" />
+				<field name="fecha_actual" />
+				<field name="usuario_id" />
+				<field name="votos" />
+				<field name="promedio" />
+
+			</tree>
+		</field>
+	</record>	
+
+	<record id="ideas_form" model="ir.ui.view">
+		<field name="name">ideas.form</field>
+		<field name="model">califica.ideas</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="idea_id" />
+						<field name="calificacion_id" />
+						<field name="fecha_actual" />
+						<field name="usuario_id" />
+						<field name="votos" />
+						<field name="promedio" />
+
+					</group>	
+				</sheet>	
+			</form>
+		</field>
+	</record>	
+
+	<record id="accion_ideas_califica" model="ir.actions.act_window">
+		<field name="name">Calificacion</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">califica.ideas</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem name = "Calificacion de Ideas" id = "calificacion_ideas" sequence = "20" parent = "ideas_menu" action = "accion_ideas_califica"/>
+
+
+</odoo>
+
+	
+
+	
+
+
