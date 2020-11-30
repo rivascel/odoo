@@ -20,7 +20,7 @@ class registro_ideas(models.Model):
 			if rec.fechainicial:
 				rec.fechafinal = '2020-11-01'
 			else:
-				rec.fechafinal = '2020-11-01'
+				rec.fechafinal = '2021-11-01'
 
 
 	votos = fields.Integer('Votos', size=20, required=True, readonly=False)
