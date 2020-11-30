@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models
+from odoo import fields, models, api
 from datetime import time, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
@@ -18,19 +18,14 @@ class registro_ideas(models.Model):
 	def set_calculo_fecha(self):
 		for rec in self:
 			if rec.fechainicial:
-				rec.fechafinal = '01/11/2020'
+				rec.fechafinal = '2020-11-01'
 			else:
-				rec.fechafinal = '01/11/2021'
+				rec.fechafinal = '2021-11-01'
 
 
-	votos = fields.Integer('Votos', size=20, required=True, readonly=True)
-	promedio = fields.Float('Promedio',size=10,required=True, readonly=True)
+	votos = fields.Integer('Votos', size=20, required=True, readonly=False)
+	promedio = fields.Float('Promedio',size=10,required=True, readonly=False)
 
 
-
-
-
-
-	
 
 

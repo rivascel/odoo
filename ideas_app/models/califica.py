@@ -11,7 +11,7 @@ class califica_ideas (models.Model):
 	calificacion_id = fields.Float('calificacion', size=10, required=True)
 	fecha_actual = fields.Datetime('Fecha Calificacion', default=datetime.now(), required=True, readonly=True)
 	usuario_id= fields.Many2one('res.partner', 'id usuario', required=True)
-	votos = fields.Integer('Votos', size=20, required=True, readonly=True)
-	promedio = fields.Float('Promedio',size=10,required=True, readonly=True)
+	votos = fields.Integer('Votos', size=20, required=True, readonly=False)
+	promedio = fields.Float('Promedio',size=10,required=True, readonly=False)
 
 
