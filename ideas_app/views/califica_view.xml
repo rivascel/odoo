@@ -10,9 +10,6 @@
 				<field name="calificacion_id" />
 				<field name="fecha_actual" />
 				<field name="usuario_id" />
-				<field name="votos" />
-				<field name="promedio" />
-
 			</tree>
 		</field>
 	</record>	
@@ -28,9 +25,6 @@
 						<field name="calificacion_id" />
 						<field name="fecha_actual" />
 						<field name="usuario_id" />
-						<field name="votos" />
-						<field name="promedio" />
-
 					</group>	
 				</sheet>	
 			</form>
@@ -39,9 +33,7 @@
 
 	<record id="accion_ideas_califica" model="ir.actions.act_window">
 		<field name="name">Calificacion</field>
-		<field name="type">ir.actions.act_window</field>
 		<field name="res_model">califica.ideas</field>
-		<field name="view_type">form</field>
 		<field name="view_mode">tree,form</field>
 	</record>
 
