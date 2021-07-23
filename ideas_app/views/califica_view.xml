@@ -6,10 +6,11 @@
 		<field name="model">califica.ideas</field>
 		<field name="arch" type="xml">
 			<tree>
-				<field name="idea_id" />
+				<field name="name" />
+				<field name="codigo" />
 				<field name="calificacion_id" />
 				<field name="fecha_actual" />
-				<field name="usuario_id" />
+				<field name="usuario_id"/>
 			</tree>
 		</field>
 	</record>	
@@ -21,7 +22,8 @@
 			<form>
 				<sheet>
 					<group>
-						<field name="idea_id" />
+						<field name="name" />
+						<field name="codigo" />
 						<field name="calificacion_id" />
 						<field name="fecha_actual" />
 						<field name="usuario_id" />
