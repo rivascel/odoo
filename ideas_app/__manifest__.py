@@ -9,11 +9,10 @@
     'data': [
         'views/registro_view.xml',
         'views/califica_view.xml',
-
+        'views/grupo_view.xml',
         'security/security_registro.xml',
-        'security/security_califica.xml'
-
-        
+        'security/security_califica.xml',
+        'security/security_grupo.xml'
     ],
     'installable': True,
     'active': True,

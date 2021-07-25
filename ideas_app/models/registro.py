@@ -9,8 +9,8 @@ class registro_ideas(models.Model):
     _description = "Tabla de ideas"
 
     name = fields.Char('Nombre de idea', size=256, required=True)
-    codigo = fields.Integer('código', size=20, required=True)
-    grupo = fields.Char('Grupo', size=100)
+    #codigo = fields.Integer('código', size=20, required=True)
+    
     descripcion = fields.Char('Descripcion', size=200)
     fechainicial = fields.Datetime('Fecha Inicial', size=20, required=True, default=date.today().strftime('%Y-%m-%d'))
 
@@ -23,12 +23,12 @@ class registro_ideas(models.Model):
     votos = fields.Float('Votos', size=20, readonly=True)
     promedio = fields.Float('Promedio', size=10, readonly=True, compute='_calc_voto')
 
-    _sql_constraints = [
-                     ('codigo', 
-                      'unique(codigo)',
-                      'Choose another value - it has to be unique!')]
+#    _sql_constraints = [
+#                     ('codigo', 
+#                      'unique(codigo)',
+#                      'Choose another value - it has to be unique!')]
 
-#suma el campo 'calificacion_id' del modelo 'califica' agrupado por el campo 'codigo'
+    #suma el campo 'calificacion_id' del modelo 'califica' agrupado por el campo 'codigo'
     def _calc_voto(self):
         for rec in self:
             average_scored=0
@@ -39,3 +39,6 @@ class registro_ideas(models.Model):
                     average_scored += scored.calificacion_id/number
 
         rec.promedio = average_scored
+        
+    grupo = fields.Many2one('registro.grupos', 'Grupo',size=100)
+

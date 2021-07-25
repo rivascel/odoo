@@ -20,10 +20,12 @@ class califica_ideas (models.Model):
 				raise exceptions.ValidationError('La calificación debe ser entre 0 y 10')
 	
 	#Se genene una restriccion para que el usuario solo puede calificar una sola vez una Idea 
-	@api.constrains('calificacion_id')
+	@api.constrains('codigo','usuario_id')
 	def _validaVoto(self):
-		for rec in self:
-			usuario_ideas_ids = self.search(['&',('usuario_id','=',rec.create_uid),('codigo','=',rec.codigo)])
+		if self.codigo and self.usuario_id:
+			codigo_ids = self.search_count([('codigo','=',self.codigo)])
+			usuario_ideas_ids = self.search_count([('usuario_id','=',self.create_uid.id)])
+			if codigo_ids > 1 and usuario_ideas_ids > 1:
+				raise exceptions.ValidationError('Ya califico esta idea')		
 
-			if 'codigo' in 'usuario_ideas_ids' and 'usuario_id' in 'usuario_ideas_ids':
-				raise exceptions.ValidationError('Ya calificó esta idea')
+	
