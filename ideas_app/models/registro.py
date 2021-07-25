@@ -9,7 +9,12 @@ class registro_ideas(models.Model):
     _description = "Tabla de ideas"
 
     name = fields.Char('Nombre de idea', size=256, required=True)
-    #codigo = fields.Integer('código', size=20, required=True)
+    #codigo = fields.Many2one('registro.grupos', 'codigo', size=20, required=True)
+
+    grupo = fields.Many2one('registro.grupos', 'Grupo',size=100)
+    codigo = fields.Integer(string='codigo', related='grupo.codigo', store=True)    
+    
+
     
     descripcion = fields.Char('Descripcion', size=200)
     fechainicial = fields.Datetime('Fecha Inicial', size=20, required=True, default=date.today().strftime('%Y-%m-%d'))
@@ -40,5 +45,5 @@ class registro_ideas(models.Model):
 
         rec.promedio = average_scored
         
-    grupo = fields.Many2one('registro.grupos', 'Grupo',size=100)
+    
 

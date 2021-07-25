@@ -7,8 +7,8 @@
 		<field name="arch" type="xml">
 			<tree>
 				<field name="name" />
-				<field name="codigo" />
 				<field name="grupo" />
+				<field name="codigo" />
 				<field name="descripcion" />
 				<field name="fechainicial" />
 				<field name="fechafinal" />
@@ -24,8 +24,8 @@
 				<sheet>
 					<group>
 						<field name="name" />
-						<field name="codigo" />
 						<field name="grupo" />
+						<field name="codigo" />
 						<field name="descripcion" />
 						<field name="fechainicial" />
 						<field name="fechafinal"/>
