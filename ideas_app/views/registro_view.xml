@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-	
-		<record id="ideas_tree" model="ir.ui.view">
+
+	<record id="ideas_tree" model="ir.ui.view">
 		<field name="name">tree.ideas</field>
 		<field name="model">registro.ideas</field>
 		<field name="arch" type="xml">

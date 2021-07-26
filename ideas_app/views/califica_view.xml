@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+	<!-- explicit graph view definition -->
+    <record id="view_califica_graph" model="ir.ui.view" >
+        <field name="name">califica.ideas.graph</field>
+        <field name="model">califica.ideas</field>
+        <field name="arch" type="xml">
+            <graph string="Promedio votos por usuario" >
+                <field name="usuario_id"/>
+                <field name="calificacion_id" type="measure" />
+            </graph>
+        </field>
+    </record>
 
 	<record id="califica_tree" model="ir.ui.view">
 		<field name="name">view.tree.califica</field>
@@ -36,7 +47,7 @@
 	<record id="accion_ideas_califica" model="ir.actions.act_window">
 		<field name="name">Calificacion</field>
 		<field name="res_model">califica.ideas</field>
-		<field name="view_mode">tree,form</field>
+		<field name="view_mode">tree,form,graph</field>
 	</record>
 
 	<menuitem name = "Calificacion de Ideas" id = "calificacion_ideas" sequence = "20" parent = "ideas_menu" action = "accion_ideas_califica"/>
