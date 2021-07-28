@@ -29,7 +29,6 @@
 						<field name="descripcion" />
 						<field name="fechainicial" />
 						<field name="fechafinal"/>
-						<field name="votos" />
 						<field name="promedio" />
 					</group>	
 				</sheet>	

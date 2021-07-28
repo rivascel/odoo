@@ -21,10 +21,8 @@ class registro_ideas(models.Model):
             rec.fechafinal = rec.fechainicial+timedelta(days=30)
 
     fechafinal = fields.Datetime('Fecha Final', compute='_set_calculo_fecha')
-    votos = fields.Float('Votos', size=20, readonly=True)
     promedio = fields.Float('Promedio', size=10, readonly=True, compute='_calc_voto')
 
-#    
     #suma el campo 'calificacion_id' del modelo 'califica' agrupado por el campo 'codigo'
     def _calc_voto(self):
         for rec in self:

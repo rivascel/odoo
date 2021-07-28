@@ -5,7 +5,6 @@ from datetime import datetime, time
 
 class califica_ideas (models.Model):   
 	_name = "califica.ideas"
-	#__inherit = 'registro'
 
 	name = fields.Many2one('registro.ideas','Idea')
 	codigo = fields.Integer(string='codigo', related='name.codigo', store=True)
@@ -30,17 +29,9 @@ class califica_ideas (models.Model):
 					]
 			records=self.search(domain)
 			codigo_ids=records.mapped('calificacion_id')
-#			usuario_ideas_ids=records.mapped('usuario_id')
-
 			data.total1 = len(codigo_ids)
-#			total2 = len(usuario_ideas_ids)
 
 			if data.total1 > 1:
 				raise exceptions.ValidationError('Ya califico esta idea')	
 				
-	#@api.constraints('name'):
-	#def _readOnly(self):
-   #		for rec in self:
-	#		if rec.usuario_id != default=lambda self: self.env.user:
-    			
 	
