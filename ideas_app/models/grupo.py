@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, exceptions
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
+class groupsUsers(models.Model):
+    _name = 'groups.users'
+    #_inherit = 'res.partner'
     
-    grupo_id = fields.Many2one('registro.grupos','Id Grupo')
+    id_usuario = fields.Many2one('res.partner','usuario')
+    grupo_ids = fields.Many2one('registro.grupos', string='Id Grupo')

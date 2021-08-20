@@ -5,9 +5,10 @@ class registro_grupos(models.Model):
     _name = 'registro.grupos'
     _description = "Tabla de grupos"
 
-    codigo = fields.Integer('Código grupo', size=20, required=True)
-    name= fields.Char('Nombre Grupo', size=256, required=True)
-    personas_ids = fields.One2many('res.partner','grupo_id','Personas Grupo')
+    codigo = fields.Integer('Código grupo', required=True)
+    name= fields.Char('Nombre Grupo', required=True)
+    
+    personas_gr = fields.One2many('groups.users','grupo_ids','Personas Grupo')
 
     _sql_constraints = [
                      ('codigo', 

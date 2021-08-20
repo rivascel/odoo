@@ -12,7 +12,8 @@
         'views/grupo_view.xml',
         'security/security_registro.xml',
         'security/security_califica.xml',
-        'security/security_grupo.xml'
+        'security/security_grupo.xml',
+        'security/security_usersGroup.xml'
     ],
     'installable': True,
     'active': True,
