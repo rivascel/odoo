@@ -22,9 +22,8 @@
 					<field name="codigo" />
 					<field name="name" />
 					<field name="personas_gr" >
-						<tree>
+						<tree editable="bottom">
 							<field name="id_usuario"/>
-
 							<field name="grupo_ids" invisible="1"/>
 						</tree>
 					</field>

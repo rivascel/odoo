@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+	<!-- explicit graph view definition -->
+    <record id="view_registro_graph" model="ir.ui.view" >
+        <field name="name">registro.ideas.graph</field>
+        <field name="model">registro.ideas</field>
+        <field name="arch" type="xml">
+            <graph string="Promedio votos por usuario" >
+                <field name="usuario_id"/>
+                <field name="promedioUsu" type="measure" />
+            </graph>
+        </field>
+    </record>
 
 	<record id="ideas_tree" model="ir.ui.view">
 		<field name="name">tree.ideas</field>
@@ -12,6 +23,7 @@
 				<field name="descripcion" />
 				<field name="fechainicial" />
 				<field name="fechafinal" />
+				
 			</tree>
 		</field>
 	</record>	
@@ -30,6 +42,7 @@
 						<field name="fechainicial" />
 						<field name="fechafinal"/>
 						<field name="promedio" />
+						<field name="promedioUsu"/>
 					</group>	
 				</sheet>	
 			</form>
@@ -39,7 +52,7 @@
 	<record id="accion_ideas_registro" model="ir.actions.act_window">
 		<field name="name">Registro</field>
 		<field name="res_model">registro.ideas</field>
-		<field name="view_mode">tree,form</field>
+		<field name="view_mode">tree,form,graph</field>
 	</record>
 
 	<!--Menu principal-->

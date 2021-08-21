@@ -11,7 +11,8 @@ class califica_ideas (models.Model):
 	calificacion_id = fields.Float('calificacion', size=10, required=True)
 	fecha_actual = fields.Datetime('Fecha Calificacion', default=datetime.now(), readonly=True)
 	usuario_id= fields.Many2one('res.users', 'Usuario', readonly=True, default=lambda self: self.env.user)
-	
+	promedioUsu = fields.Float('Promedio Usuario', size=10, readonly=True, compute='_calc_voto_usu')
+
 	@api.constrains('calificacion_id')
 	def _calif(self):
 		for record in self:
@@ -22,7 +23,6 @@ class califica_ideas (models.Model):
 	@api.constrains('codigo','usuario_id')
 	def _validaVoto(self):
 		for data in self:
-			#if self.codigo and self.usuario_id:
 			domain=[
 					('codigo','=',self.codigo),
 					('usuario_id','=',self.create_uid.id)
@@ -33,5 +33,5 @@ class califica_ideas (models.Model):
 
 			if data.total1 > 1:
 				raise exceptions.ValidationError('Ya califico esta idea')	
-				
+
 	
