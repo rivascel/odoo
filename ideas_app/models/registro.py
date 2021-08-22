@@ -10,7 +10,7 @@ class registro_ideas(models.Model):
 
     name = fields.Char('Nombre de idea', size=256, required=True)
     codigo_grupo = fields.Many2one('registro.grupos', 'codigo grupo', size=20, required=True)
-    grupo = fields.Many2one('registro.grupos', 'Grupo',size=100)
+    #grupo = fields.Many2one('registro.grupos', 'Grupo',size=100)
     codigo = fields.Integer(string='codigo idea', size=20, required=True)    
     descripcion = fields.Char('Descripcion', size=200)
     fechainicial = fields.Datetime('Fecha Inicial', size=20, required=True, default=date.today().strftime('%Y-%m-%d'))
