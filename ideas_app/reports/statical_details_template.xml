@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="report_statical_details">
+        
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <h2>Resumen estadisticas</h2>
+                    Usuario: <t t-esc="doc.usuario_id"/>
+                    
+                    Promedio calificaciones por usuario<t t-esc="doc.promedioUsu"/> 
+                </t>
+            </t>
+        </t>
+    </template>    
+</odoo>

@@ -13,7 +13,9 @@
         'security/security_registro.xml',
         'security/security_califica.xml',
         'security/security_grupo.xml',
-        'security/security_usersGroup.xml'
+        'security/security_usersGroup.xml',
+        'reports/report.xml',
+        'reports/statical_details_template.xml'
     ],
     'installable': True,
     'active': True,
