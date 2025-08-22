@@ -1,0 +1,15 @@
+<odoo>
+    <template id="record_tracking_detail">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!-- <t t-call="web.basic_layout"> -->
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Reporte de Correspondencia</h2>
+                        <p>Aquí el contenido del reporte.</p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

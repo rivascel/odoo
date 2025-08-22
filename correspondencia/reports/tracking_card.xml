@@ -1,0 +1,24 @@
+<odoo>
+    <template id="record_tracking_card">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <t t-set="o" t-value="docs[0]"/>
+                    <div style="text-align:left; margin: 0 auto;">
+                        <t t-if="o.codeBar_type and o.codeBar_type.barcode">
+                            <img t-att-src="'/report/barcode/Code128/' + o.codeBar_type.barcode + '?width=600&amp;height=100'"/>
+                        </t>
+                        <t t-else="">
+                            <p>No hay información de código de barras disponible</p>
+                        </t>
+                    </div>
+                    <p>Destino <span t-esc="o.finalLocation.display_name"/></p>
+                    <p>Nombre <span t-esc="o.destination.display_name"/></p>
+                    <p>Fecha recibo <span t-esc="o.date"/></p>
+                    <p>Remitente <span t-esc="o.sender.display_name"/></p>
+
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

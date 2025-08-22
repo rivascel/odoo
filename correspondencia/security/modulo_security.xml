@@ -1,0 +1,15 @@
+<odoo>
+    <record id="categoria_modulo_correspondencia" model="ir.module.category">
+        <field name="name">Correspondencia</field>
+    </record>
+    <!-- <record id="corresp_group_user" model="res.groups">
+        <field name="name">Usuario</field>
+        <field name="category_id" ref="categoria_modulo_correspondencia"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record> -->
+    <record id="corresp_group_admin" model="res.groups">
+        <field name="name">Administrador</field>
+        <field name="category_id" ref="categoria_modulo_correspondencia"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+</odoo>
