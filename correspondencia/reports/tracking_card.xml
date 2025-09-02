@@ -2,21 +2,26 @@
     <template id="record_tracking_card">
         <t t-call="web.html_container">
             <t t-call="web.internal_layout">
-                <div class="page">
-                    <t t-set="o" t-value="docs[0]"/>
-                    <div style="text-align:left; margin: 0 auto;">
-                        <t t-if="o.codeBar_type and o.codeBar_type.barcode">
-                            <img t-att-src="'/report/barcode/Code128/' + o.codeBar_type.barcode + '?width=600&amp;height=100'"/>
-                        </t>
-                        <t t-else="">
-                            <p>No hay información de código de barras disponible</p>
-                        </t>
+                <div class="card"
+                    style="margin: 10px auto; font-size: 10px; 
+                            padding: 2px; width: 16rem; border:1px solid #000;">
+                    <div class="card-body" style="padding: 4px;">
+                        <t t-set="o" t-value="docs[0]"/>
+                        <div style="text-align:center; margin: 0 padding:0;">
+                            <t t-if="o.codeBar_type and o.codeBar_type.barcode">
+                                <img t-att-src="'/report/barcode/Code128/' + o.codeBar_type.barcode + '?width=200&amp;height=45'"
+                                style='display:block; margin: 0 auto;'
+                                />
+                            </t>
+                            <t t-else="">
+                                <p>No hay información de código de barras disponible</p>
+                            </t>
+                        </div>
+                        <p style="margin:1px 0">Destino <span t-esc="o.finalLocation.display_name"/></p>
+                        <p style="margin:1px 0">Nombre <span t-esc="o.destination.display_name"/></p>
+                        <p style="margin:1px 0">Fecha recibo <span t-esc="o.date"/></p>
+                        <p style="margin:1px 0"> Remitente <span t-esc="o.sender.display_name"/></p>
                     </div>
-                    <p>Destino <span t-esc="o.finalLocation.display_name"/></p>
-                    <p>Nombre <span t-esc="o.destination.display_name"/></p>
-                    <p>Fecha recibo <span t-esc="o.date"/></p>
-                    <p>Remitente <span t-esc="o.sender.display_name"/></p>
-
                 </div>
             </t>
         </t>

@@ -1,14 +1,45 @@
 <odoo>
     <template id="record_tracking_detail">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
-                <!-- <t t-call="web.basic_layout"> -->
-                <t t-call="web.external_layout">
-                    <div class="page">
-                        <h2>Reporte de Correspondencia</h2>
-                        <p>Aquí el contenido del reporte.</p>
-                    </div>
-                </t>
+            <!-- <t t-call="web.basic_layout"> -->
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="header">
+                        <div class="col-sm">
+                            <img 
+                                style="max-height: 90px; margin-left= 30px"
+                            />    
+                        </div>
+                        <div class="col-sm" style="margin-left: 50px; padding-top: 50px">
+                            <h2 style="text-align: center; font-weight: bold; font-size: 50px">
+                            CORRESPONDENCIA RECIBIDA
+                            </h2>
+                        </div>
+                    </div>  
+                    
+                    <table class="table table-sm"
+                        style="border: 1px solid #939e9d; border-collapse: collapse">
+                        <thead>
+                            <tr class=" " style="border: 1px solid #939e9d; font-size: 13px">
+                                <th>Destino</th>
+                                <th>Nombre</th>
+                                <th>Fecha recibo</th>
+                                <th>Remitente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">
+                                <tr>
+                                    <td><t t-esc="o.finalLocation.display_name"/></td>
+                                    <td><t t-esc="o.destination.display_name"/></td>
+                                    <td><t t-esc="o.date"/></td>
+                                    <td><t t-esc="o.sender.display_name"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
             </t>
         </t>
     </template>

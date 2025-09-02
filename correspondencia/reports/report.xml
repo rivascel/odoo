@@ -20,4 +20,13 @@
         <field name="binding_type">report</field>
     </record>
 
+    <record id="action_record_tracking_list" model="ir.actions.report" >
+        <field name="name">tracking list</field>
+        <field name="model">correspondencia.correspondencia</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">correspondencia.record_tracking_list</field>
+        <field name="report_file">correspondencia.record_tracking_list</field>
+        <field name="binding_model_id" ref="model_correspondencia_correspondencia"/>
+        <field name="binding_type">report</field>
+    </record>
 </odoo>

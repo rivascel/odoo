@@ -14,7 +14,9 @@
         "security/modulo_security.xml",
         "security/ir.model.access.csv",
         "reports/report.xml",
-        "reports/tracking_card.xml"
+        "reports/tracking_card.xml",
+        "reports/tracking_details.xml",
+        "reports/tracking_list.xml"
     ],
     
     "application":True,

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-
-
             <!-- Acción -->
         <record id="action_mail_register" model="ir.actions.act_window">
             <field name="name">Registro</field>
@@ -15,7 +13,6 @@
             id="menu_correspondencia_root" 
             name="Correspondencia" 
             sequence="0"
-            
         />
 
         <!-- Submenú -->
@@ -26,9 +23,6 @@
             sequence="20"
             action="action_mail_register"
         />
-
-
-
 
         <!-- Vista Tree -->
         <record id="correo_tree" model="ir.ui.view" >
@@ -50,12 +44,18 @@
             <field name="model">correspondencia.correspondencia</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button name="print_report" type="object" string="Print" class="oe_highlight"/>
+                        <!-- <button name="action_send_card" type="object" string="SendByEmail" class="oe_highlight"
+                                groups="correspondencia_correspondencia.group_send_email"/> -->
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>
                             <field name="id"/>
                             <field name="responsible"/>
                             <field name="origin"/>
+                            <field name="finalLocation"/>
                             <field name="destination"/>
                             <field name="document_type"/>
                             <field name="codeBar_type"/>
@@ -65,17 +65,12 @@
                             <field name="name_sender"/>
                             <field name="address"/>
                             <field name="phone"/>
-                            <field name="finalLocation"/>
                             <field name="attachment"/>
                             <field name="tracking"/> 
                         </group>
-                       
-
                     </sheet>
                 </form>
             </field>
         </record>
-
-    
     </data>
 </odoo>

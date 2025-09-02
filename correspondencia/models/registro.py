@@ -1,24 +1,5 @@
 from odoo import models, fields, api, exceptions
 
-# def action_print_barCode(self):
-#     self.ensure_one()
-#     if not self.codeBar_type:
-#         raise exceptions.UserError("Debe seleccionar un tipo de documento para generar el código de barras.")
-#     if not self.codeBar_type.barcode:
-#         raise exceptions.UserError("El tipo de documento seleccionado no tiene un código definido.")
-#     return {
-#         'type': 'ir.actions.report',
-#         'report_name': 'correspondencia.record_tracking_card',
-#         'report_type': 'qweb-pdf',
-#         'model': self._name,
-#         'docsids': [self.id],
-#         'context': {
-#             'active_model': self._name, 
-#             'active_id': self.id,
-#             'active_ids': [self.id]
-#             },
-#     }
-
 
 class Correspondencia(models.Model):
     _name = "correspondencia.correspondencia"
@@ -46,3 +27,6 @@ class Correspondencia(models.Model):
     phone=fields.Text("Teléfono")
     attachment=fields.Binary("Adjunto")
     tracking=fields.One2many("stock.picking", "name", string="Rastreo", readonly=True)
+
+    def print_report(self):
+       return self.env.ref('correspondencia.action_record_tracking_card').report_action(self)

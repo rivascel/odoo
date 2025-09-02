@@ -1,0 +1,31 @@
+<odoo>
+    <template id="record_tracking_list">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Reporte de Correspondencia</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Destino</th>
+                                <th>Nombre</th>
+                                <th>Fecha recibo</th>
+                                <th>Remitente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">
+                                <tr>
+                                    <td><t t-esc="o.finalLocation.display_name"/></td>
+                                    <td><t t-esc="o.destination.display_name"/></td>
+                                    <td><t t-esc="o.date"/></td>
+                                    <td><t t-esc="o.sender.display_name"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
